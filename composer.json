@@ -1,6 +1,8 @@
 {
+	"minimum-stability": "dev",
 	"require": {
 		"slim/slim": "1.6.*",
-		"mustache/mustache": "2.*"
+		"mustache/mustache": "2.*",
+		"aura/autoload": "1.*"
 	}
 }
