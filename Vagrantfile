@@ -10,8 +10,11 @@ Vagrant::Config.run do |config|
   config.vm.box_url = "http://dl.dropbox.com/u/9227672/CentOS-6.0-x86_64-netboot-4.1.6.box"
 
   config.vm.forward_port 80, 8080
-  config.vm.forward_port 27017, 27017
 
-  config.vm.provision :shell, :path => "system/init.sh"
+  config.vm.provision :puppet do |puppet|
+    puppet.manifests_path = ".puppet/manifests"
+    puppet.manifest_file = "vagrant.pp"
+    puppet.module_path  = ".puppet/modules"
+  end
 
 end
